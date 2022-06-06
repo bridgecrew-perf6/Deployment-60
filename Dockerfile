@@ -1,10 +1,8 @@
 FROM centos:latest
 MAINTAINER shivsaxena7963@gmail.com
-CMD dnf --disablerepo '*' --enablerepo=extras swap centos-linux-repos centos-stream-repos
-CMD yum update -y
 RUN yum install -y httpd \
-   zip \
-  unzip
+  zip \
+ unzip
 ADD https://www.free-css.com/assets/files/free-css-templates/download/page258/loxury.zip /var/www/html/
 WORKDIR /var/www/html
 RUN unzip loxury.zip
