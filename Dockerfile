@@ -1,5 +1,7 @@
 FROM centos:latest
 MAINTAINER shivsaxena7963@gmail.com
+CMD sed -i 's/mirrorlist/#mirrorlist/g' /etc/yum.repos.d/CentOS-*
+CMD sed -i 's|#baseurl=http://mirror.centos.org|baseurl=http://vault.centos.org|g' /etc/yum.repos.d/CentOS-*
 CMD yum update -y
 RUN yum install -y httpd \
    zip \
